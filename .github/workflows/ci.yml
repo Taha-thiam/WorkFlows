@@ -1,8 +1,25 @@
-name: Testing github workflows
+name: CI - Pipeline Informatif
+
 on: push
+
 jobs:
-  init:
+  Demonstration_CI:
     runs-on: ubuntu-latest
     steps:
-      - run: echo " Bonjour, je suis un workflow de test pour les github actions"
-      - run: echo $HOSTNAME
+      - name: Étape 1 - Initialisation
+        run: echo "Initialisation du pipeline..."
+
+      - name: Étape 2 - Récupération du code
+        uses: actions/checkout@v3
+
+      - name: Étape 3 - Build
+        run: echo "Build en cours..."
+
+      - name: Étape 4 - Tests
+        run: echo "Lancement des tests..."
+
+      - name: Étape 5 - Packaging
+        run: echo "Packaging de l'application..."
+
+      - name: Étape 6 - Fin du pipeline
+        run: echo "Pipeline terminé avec succès !"
