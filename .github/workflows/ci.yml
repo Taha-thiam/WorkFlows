@@ -5,10 +5,11 @@ on: push
 jobs:
   Demonstration_CI:
     runs-on: ubuntu-latest
+    env:
+      STEP1 : " Le code vient d'être poussé sur le dépôt."
     steps:
       - name: Étape 1 - Initialisation
-        run: echo "Initialisation du pipeline..."
-
+        run: echo "$STEP1"
       - name: Étape 2 - Récupération du code
         uses: actions/checkout@v3
 
